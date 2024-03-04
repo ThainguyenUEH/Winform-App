@@ -40,39 +40,36 @@
             // txtEmail
             // 
             txtEmail.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtEmail.Location = new Point(116, 66);
-            txtEmail.Margin = new Padding(3, 2, 3, 2);
+            txtEmail.Location = new Point(133, 88);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(382, 23);
+            txtEmail.Size = new Size(436, 27);
             txtEmail.TabIndex = 0;
             // 
             // txtPassword
             // 
             txtPassword.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtPassword.Location = new Point(116, 122);
-            txtPassword.Margin = new Padding(3, 2, 3, 2);
+            txtPassword.Location = new Point(133, 163);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
-            txtPassword.Size = new Size(382, 23);
+            txtPassword.Size = new Size(436, 27);
             txtPassword.TabIndex = 1;
             // 
             // txtPasswordConfirm
             // 
             txtPasswordConfirm.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            txtPasswordConfirm.Location = new Point(116, 182);
-            txtPasswordConfirm.Margin = new Padding(3, 2, 3, 2);
+            txtPasswordConfirm.Location = new Point(133, 243);
             txtPasswordConfirm.Name = "txtPasswordConfirm";
             txtPasswordConfirm.PasswordChar = '*';
-            txtPasswordConfirm.Size = new Size(382, 23);
+            txtPasswordConfirm.Size = new Size(436, 27);
             txtPasswordConfirm.TabIndex = 2;
             // 
             // lblEmail
             // 
             lblEmail.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(116, 49);
+            lblEmail.Location = new Point(133, 65);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(68, 15);
+            lblEmail.Size = new Size(86, 20);
             lblEmail.TabIndex = 3;
             lblEmail.Text = "Nhập email";
             // 
@@ -80,9 +77,9 @@
             // 
             lblPassword.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             lblPassword.AutoSize = true;
-            lblPassword.Location = new Point(116, 105);
+            lblPassword.Location = new Point(133, 140);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(89, 15);
+            lblPassword.Size = new Size(110, 20);
             lblPassword.TabIndex = 4;
             lblPassword.Text = "Nhập mật khẩu";
             // 
@@ -90,19 +87,18 @@
             // 
             lblPasswordConfirm.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             lblPasswordConfirm.AutoSize = true;
-            lblPasswordConfirm.Location = new Point(116, 164);
+            lblPasswordConfirm.Location = new Point(133, 219);
             lblPasswordConfirm.Name = "lblPasswordConfirm";
-            lblPasswordConfirm.Size = new Size(104, 15);
+            lblPasswordConfirm.Size = new Size(130, 20);
             lblPasswordConfirm.TabIndex = 5;
             lblPasswordConfirm.Text = "Nhập lại mật khẩu";
             // 
             // btnRegister
             // 
             btnRegister.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnRegister.Location = new Point(556, 256);
-            btnRegister.Margin = new Padding(3, 2, 3, 2);
+            btnRegister.Location = new Point(635, 341);
             btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(113, 57);
+            btnRegister.Size = new Size(129, 76);
             btnRegister.TabIndex = 6;
             btnRegister.Text = "Đăng ký";
             btnRegister.UseVisualStyleBackColor = true;
@@ -110,9 +106,9 @@
             // 
             // Giaodiendangki
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(800, 451);
             Controls.Add(btnRegister);
             Controls.Add(lblPasswordConfirm);
             Controls.Add(lblPassword);
@@ -120,8 +116,7 @@
             Controls.Add(txtPasswordConfirm);
             Controls.Add(txtPassword);
             Controls.Add(txtEmail);
-            Margin = new Padding(3, 2, 3, 2);
-            MinimumSize = new Size(527, 310);
+            MinimumSize = new Size(600, 398);
             Name = "Giaodiendangki";
             Text = "Form1";
             ResumeLayout(false);

@@ -79,7 +79,6 @@
             txtPasswordLogin.PasswordChar = '*';
             txtPasswordLogin.Size = new Size(415, 23);
             txtPasswordLogin.TabIndex = 3;
-            txtPasswordLogin.TextChanged += txtPasswordLogin_TextChanged;
             // 
             // label1
             // 
@@ -90,7 +89,6 @@
             label1.Size = new Size(88, 15);
             label1.TabIndex = 4;
             label1.Text = "Nhập tài khoản";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -101,7 +99,6 @@
             label2.Size = new Size(89, 15);
             label2.TabIndex = 5;
             label2.Text = "Nhập mật khẩu";
-            label2.Click += label2_Click;
             // 
             // label4
             // 
@@ -113,7 +110,6 @@
             label4.Size = new Size(187, 32);
             label4.TabIndex = 8;
             label4.Text = "ĐĂNG NHẬP";
-            label4.Click += label4_Click;
             // 
             // Giaodiendangnhap
             // 
@@ -140,8 +136,8 @@
 
         private Button btnRegister;
         private Button btnLogin;
-        private TextBox txtEmailLogin;
-        private TextBox txtPasswordLogin;
+        protected TextBox txtEmailLogin;
+        protected TextBox txtPasswordLogin;
         private Label label1;
         private Label label2;
         private Label label4;

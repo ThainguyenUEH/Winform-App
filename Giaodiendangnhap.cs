@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SQLite;
 using System.Drawing;
@@ -13,13 +14,14 @@ namespace Giaodien
 {
     public partial class Giaodiendangnhap : Form
     {
-        private string connectionString = "Data Source=Account.db;Version=3;";
+        protected string connectionString = "Data Source=Account.db;Version=3;";
         public Giaodiendangnhap()
         {
             InitializeComponent();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+
+        protected void btnLogin_Click(object sender, EventArgs e)
         {
             string email = txtEmailLogin.Text;
             string password = txtPasswordLogin.Text;
@@ -29,13 +31,23 @@ namespace Giaodien
             {
                 MessageBox.Show("Đăng nhập thành công!");
                 // Điều hướng đến giao diện chính hoặc trang khác tùy thuộc vào ứng dụng của bạn
+                this.Hide();
+
+                // Tạo một đối tượng mới của hộp thoại phòng chờ và truyền thông tin cần thiết
+                Giaodienphongcho roomBox = new Giaodienphongcho(email, password, connectionString);
+
+                // Hiển thị hộp thoại phòng chờ
+                roomBox.ShowDialog();
+
+                // Hiển thị lại giao diện đăng nhập khi người dùng đóng hộp thoại phòng chờ
+                this.Show();
             }
             else
             {
                 MessageBox.Show("Sai mật khẩu hoặc tài khoản không tồn tại.");
             }
-
-            bool AuthenticateAccount(string email, string password)
+        }
+           protected bool AuthenticateAccount(string email, string password)
             {
                 using (SQLiteConnection connection = new SQLiteConnection(connectionString))
                 {
@@ -61,33 +73,12 @@ namespace Giaodien
                     }
                 }
             }
-        }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
             // Chuyển đến giao diện đăng ký khi người dùng nhấn nút Đăng ký
             Giaodiendangki Giaodiendangki = new Giaodiendangki();
             Giaodiendangki.Show();
-        }
-
-        private void txtPasswordLogin_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
