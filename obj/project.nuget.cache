@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fdfxzirZ5SRRX999Bi1mjK0GLOd3PATfNtgRp057ldR7LlCMk4SbxImgB6/9s82wbjEuUF+vVgxgf0UiGUHTCQ==",
+  "dgSpecHash": "qUOs2EkYbIPZX5JUYNP8gv4Ov5WzdgWjAu1dwSg/q4NYQdX1T41iYenSBk58tGdzYT0IlidHq5BlH6UpxioRgg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ACER\\Downloads\\Giaodiendangky1\\Giaodiendangky\\Giaodien.csproj",
+  "projectFilePath": "C:\\Users\\ACER\\Desktop\\Programs\\Desktop winform\\Giaodien\\Giaodiendangky\\Giaodien.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ACER\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
