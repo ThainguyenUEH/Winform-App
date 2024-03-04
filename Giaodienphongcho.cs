@@ -32,7 +32,7 @@ namespace Giaodien
             if (roomCode == "123456") //Này là ví dụ khi nhập code đúng sẽ cho vào phòng đợi
             {
                 MessageBox.Show("Vào phòng chờ thành công!");
-             // Òm, chắc là viết tiếp gì đó ở đây..kiểu như làm mấy cái liên quan tới Waiting Room
+                // Òm, chắc là viết tiếp gì đó ở đây..kiểu như làm mấy cái liên quan tới Waiting Room
             }
             else
             {

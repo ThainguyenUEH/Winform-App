@@ -29,32 +29,37 @@
         private void InitializeComponent()
         {
             txtRoomCodeLogin = new TextBox();
-            label1 = new Label();
+            lbl_RoomCode = new Label();
             btn_CodeEnter = new Button();
             SuspendLayout();
             // 
             // txtRoomCodeLogin
             // 
+            txtRoomCodeLogin.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             txtRoomCodeLogin.Font = new Font("Microsoft Sans Serif", 49.8000031F, FontStyle.Regular, GraphicsUnit.Point);
             txtRoomCodeLogin.Location = new Point(214, 146);
             txtRoomCodeLogin.MaxLength = 6;
+            txtRoomCodeLogin.MinimumSize = new Size(330, 101);
             txtRoomCodeLogin.Name = "txtRoomCodeLogin";
-            txtRoomCodeLogin.Size = new Size(345, 101);
+            txtRoomCodeLogin.Size = new Size(330, 101);
             txtRoomCodeLogin.TabIndex = 0;
             txtRoomCodeLogin.WordWrap = false;
             // 
-            // label1
+            // lbl_RoomCode
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Black", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(266, 102);
-            label1.Name = "label1";
-            label1.Size = new Size(227, 31);
-            label1.TabIndex = 1;
-            label1.Text = "Nhập mã số phòng";
+            lbl_RoomCode.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            lbl_RoomCode.AutoSize = true;
+            lbl_RoomCode.Font = new Font("Segoe UI Black", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_RoomCode.Location = new Point(266, 102);
+            lbl_RoomCode.Name = "lbl_RoomCode";
+            lbl_RoomCode.Size = new Size(227, 31);
+            lbl_RoomCode.TabIndex = 1;
+            lbl_RoomCode.Text = "Nhập mã số phòng";
+            lbl_RoomCode.TextAlign = ContentAlignment.TopCenter;
             // 
             // btn_CodeEnter
             // 
+            btn_CodeEnter.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btn_CodeEnter.BackColor = SystemColors.Info;
             btn_CodeEnter.Font = new Font("Tahoma", 11.8000011F, FontStyle.Regular, GraphicsUnit.Point);
             btn_CodeEnter.ForeColor = SystemColors.ActiveCaptionText;
@@ -73,8 +78,9 @@
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(800, 450);
             Controls.Add(btn_CodeEnter);
-            Controls.Add(label1);
+            Controls.Add(lbl_RoomCode);
             Controls.Add(txtRoomCodeLogin);
+            MinimumSize = new Size(816, 497);
             Name = "Giaodienphongcho";
             Text = "Giaodienphongcho";
             ResumeLayout(false);
@@ -84,7 +90,7 @@
         #endregion
 
         private TextBox txtRoomCodeLogin;
-        private Label label1;
+        private Label lbl_RoomCode;
         private Button btn_CodeEnter;
     }
 }
