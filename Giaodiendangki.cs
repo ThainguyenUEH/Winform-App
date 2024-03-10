@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data.SQLite;
+using System.Data.SqlClient;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -7,12 +7,13 @@ namespace Giaodien
 {
     public partial class Giaodiendangki : Form
     {
+     
         public Giaodiendangki()
         {
             InitializeComponent();
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
+        public void btnRegister_Click(object sender, EventArgs e)
         {
             string email = txtEmail.Text;
             string password = txtPassword.Text;
@@ -60,28 +61,16 @@ namespace Giaodien
 
         private bool SaveAccount(string email, string password)
         {
-            string connectionString = "Data Source=Account.db;Version=3;"; // Kết nối tới csdl
-
+            string connectionString = $"Server=localhost;Database=thongtintaikhoan;Integrated Security=True;";
             try
             {
-                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
 
-                    // Kiểm tra và tạo bảng Users nếu chưa tồn tại
-                    string createTableQuery = @"CREATE TABLE IF NOT EXISTS Users (
-                                                UserID INTEGER PRIMARY KEY AUTOINCREMENT,
-                                                Username TEXT NOT NULL,
-                                                Password TEXT NOT NULL
-                                              )";
-                    using (SQLiteCommand createTableCommand = new SQLiteCommand(createTableQuery, connection))
-                    {
-                        createTableCommand.ExecuteNonQuery();
-                    }
-
                     // Thêm tài khoản vào bảng Users
                     string insertQuery = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password)";
-                    using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
+                    using (SqlCommand command = new SqlCommand(insertQuery, connection))
                     {
                         command.Parameters.AddWithValue("@Username", email);
                         command.Parameters.AddWithValue("@Password", password);
@@ -93,7 +82,7 @@ namespace Giaodien
 
                     return true;
                 }
-            }
+                }
             catch
             {
                 MessageBox.Show("Lỗi khi thực hiện thêm tài khoản.");

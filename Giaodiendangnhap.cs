@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
-using System.Data.SQLite;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,7 +14,7 @@ namespace Giaodien
 {
     public partial class Giaodiendangnhap : Form
     {
-        protected string connectionString = "Data Source=Account.db;Version=3;";
+       
         public Giaodiendangnhap()
         {
             InitializeComponent();
@@ -25,6 +25,8 @@ namespace Giaodien
         {
             string email = txtEmailLogin.Text;
             string password = txtPasswordLogin.Text;
+
+            string connectionString = $"Server=localhost;Database=thongtintaikhoan;Integrated Security = True;";
 
             // Thực hiện xác thực tài khoản và mật khẩu từ cơ sở dữ liệu
             if (AuthenticateAccount(email, password))
@@ -49,30 +51,31 @@ namespace Giaodien
         }
            protected bool AuthenticateAccount(string email, string password)
             {
-                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            string connectionString = $"Server=localhost;Database=thongtintaikhoan;Integrated Security = True;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string query = "SELECT COUNT(*) FROM Users WHERE Username = @Username AND Password = @Password";
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    connection.Open();
+                    command.Parameters.AddWithValue("@Username", email);
+                    command.Parameters.AddWithValue("@Password", password);
 
-                    string query = "SELECT COUNT(*) FROM Users WHERE Username = @Username AND Password = @Password";
+                    int count = Convert.ToInt32(command.ExecuteScalar());
 
-                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                    if (count > 0)
                     {
-                        command.Parameters.AddWithValue("@Username", email);
-                        command.Parameters.AddWithValue("@Password", password);
-
-                        int count = Convert.ToInt32(command.ExecuteScalar());
-
-                        if (count > 0)
-                        {
-                            return true; // Tài khoản hợp lệ
-                        }
-                        else
-                        {
-                            return false; // Tài khoản không hợp lệ
-                        }
+                        return true; // Tài khoản hợp lệ
+                    }
+                    else
+                    {
+                        return false; // Tài khoản không hợp lệ
                     }
                 }
             }
+        }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
